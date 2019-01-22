@@ -1,3 +1,16 @@
+/*
+Android aplikacija koja pokazuje popis svih dostupnih podataka organiziranih po stanicama.
+
+Projekt: Pametni grad
+Tim: Programeri
+Autor: 
+	Jakov Tomasić, 3.d
+Mentor: Lovro Šverko, prof.
+Srednja škola za elektrotehniku i računalstvo, Rijeka
+Školska godina 2018./2019.
+
+*/
+
 package com.smartcity.sser.android.smartcityadmin;
 
 import android.app.LoaderManager;
