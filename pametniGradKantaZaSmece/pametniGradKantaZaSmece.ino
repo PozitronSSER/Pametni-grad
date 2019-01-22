@@ -1,17 +1,13 @@
-﻿/* ********* Program za upravljanje senzorom za kantu za smeće **********
-
-kantaZaSmece.ino
-
-Srednja škola za elektrotehniku i računalstvo Rijeka
-
+/*
+Projekt: Pametni grad
+Tim: Optimizacija odvoza otpada
 Autori:
-Vanja Ljubobratović (4.d - tehničar za računalstvo)
-Patrik Horvat (4.d - tehničar za računalstvo)
-
-Mentor:
-Lovro Šverko, prof.
-
-Školska godina: 2017/2018
+	Manuel Bradičić, 3.d
+	Patrik Horvat, 4.d
+	Vanja Ljubobratović, 4.d
+Mentor: Lovro Šverko, prof.
+Srednja škola za elektrotehniku i računalstvo, Rijeka
+Školska godina 2017./2018.
 */
 
 /************************* Biblioteke *********************************/
