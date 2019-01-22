@@ -1,7 +1,9 @@
 /*
 Projekt: Pametni grad
 Tim: Pametni parking
-Autor: Adrian Prodan, 1.c
+Autori: 
+	Adrian Prodan, 1.c
+	Bernard Miculinić, 1.c
 Srednja škola za elektrotehniku i računalstvo, Rijeka
 Školska godina 2018./2019.
 */
