@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StaniceActivity"
+    android:background="@color/backGroundColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"/>
+
+        <!--android:divider="@null"-->
+        <!--android:dividerHeight="0dp"-->
+        <ListView
+            android:id="@+id/stanica_list_view"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/no_internet_connection_IV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/no_connection"
+        android:padding="50dp"
+        android:visibility="gone"/>
+
+
+
+
+</RelativeLayout>

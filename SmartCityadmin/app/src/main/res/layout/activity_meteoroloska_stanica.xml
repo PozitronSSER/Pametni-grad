@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detailActivities.MeteoroloskaStanicaActivity"
+    android:background="@color/backGroundColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/temperatura_zraka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="24dp"
+            android:text="@string/temperaturaZraka"
+            android:textSize="16sp"
+            android:textColor="@color/textColor"/>
+
+        <TextView
+            android:id="@+id/vlaga_zraka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="24dp"
+            android:text="@string/vlagaZraka"
+            android:textSize="16sp"
+            android:textColor="@color/textColor"/>
+
+        <TextView
+            android:id="@+id/brzina_vjetra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="24dp"
+            android:text="@string/brzinaVjetra"
+            android:textSize="16sp"
+            android:textColor="@color/textColor"/>
+
+        <TextView
+            android:id="@+id/smjer_vjetra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="24dp"
+            android:text="@string/smjerVjetra"
+            android:textSize="16sp"
+            android:textColor="@color/textColor"/>
+
+        <TextView
+            android:id="@+id/kolicina_padalina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="24dp"
+            android:text="@string/kolicinaPadalina"
+            android:textSize="16sp"
+            android:textColor="@color/textColor"/>
+
+        <TextView
+            android:id="@+id/tlak_zraka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="24dp"
+            android:text="@string/tlakZraka"
+            android:textSize="16sp"
+            android:textColor="@color/textColor"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

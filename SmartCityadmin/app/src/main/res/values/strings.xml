@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Smart City</string>
+
+    <string name="refresh">Refresh</string>
+    <string name="stanica">Stanica</string>
+    <string name="stanice">Stanice</string>
+
+    <string name="meteoroloskaStanica">Meteorološka stanica</string>
+    <string name="kvalitetaZraka">Kvaliteta zraka</string>
+    <string name="rasvjeta">Rasvjeta</string>
+    <string name="kamera">Kamera</string>
+    <string name="parking">Parking</string>
+    <string name="parkingTicket">Parking ticket</string>
+    
+    <string name="temperaturaZraka">Temperatura zraka</string>
+    <string name="vlagaZraka">Vlaga zraka</string>
+    <string name="brzinaVjetra">Brzina vjetra</string>
+    <string name="smjerVjetra">Smjer vjetra</string>
+    <string name="kolicinaPadalina">Količina padalina</string>
+    <string name="tlakZraka">Tlak zraka</string>
+
+    <string name="TVOC">TVOC</string>
+    <string name="eCO2">eCO2</string>
+
+    <string name="autoVidljiv">Auto je vidljiv</string>
+    <string name="autoNijeVidljiv">Auto nije vidljiv</string>
+    <string name="pjesakVidljiv">Pješak je vidljiv</string>
+    <string name="pjesakNijeVidljiv">Pješak nije vidljiv</string>
+
+    <string name="razinaSvjetlost">Razina svjetlosti</string>
+    <string name="pokretDetektiran">Pokret detektiran</string>
+    <string name="pokretNijeDetektiran">Pokret nije detektiran</string>
+
+    <string name="parkingSlobodan">Parking je slobodan</string>
+    <string name="parkingNijeSlobodan">Parking nije slobodan</string>
+
+    <string name="slobodan">Slobodan</string>
+    <string name="zauzet">Zauzet</string>
+
+
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:minHeight="56dp"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/TVParkingTicketID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        android:textSize="16sp"
+        android:maxWidth="90dp"
+        tools:text="ID: 1"
+        android:textColor="@color/textColor"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TVParkingTicketUlaz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:maxWidth="150dp"
+            tools:text="19.11.2018 15:46"
+            android:textColor="@color/textColor"/>
+
+        <TextView
+            android:id="@+id/TVParkingTicketIzlaz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:maxWidth="150dp"
+            tools:text="19.11.2018 15:58"
+            android:textColor="@color/textColor"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TVParkingTicketRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:textSize="16sp"
+        android:layout_alignParentRight="true"
+        android:maxWidth="100dp"
+        tools:text="ZG-6547-AB"
+        android:textColor="@color/textColor"/>
+
+
+</RelativeLayout>
