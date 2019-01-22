@@ -4,6 +4,7 @@ Tim: Meteorološka stanica s mjerenjem kvalitete zraka
 Autori: 
   Patrik Perčinić, 1.c
   Niko Maričić, 1.c
+Mentor: Lovro Šverko, prof.
 Srednja škola za elektrotehniku i računalstvo, Rijeka
 Školska godina 2018./2019.
 */
