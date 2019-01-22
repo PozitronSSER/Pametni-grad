@@ -1,10 +1,14 @@
 /*
-  Meterološka stanica v.1
-  Autor: Patrik Perčinić 1.c
-  Srednja škola za elektrotehniku i računalstvo
-  Šk. god. 2018/2019
+Projekt: Pametni grad
+Tim: Meteorološka stanica s mjerenjem kvalitete zraka
+Autori: 
+  Patrik Perčinić, 1.c
+  Niko Maričić, 1.c
+Srednja škola za elektrotehniku i računalstvo, Rijeka
+Školska godina 2018./2019.
 */
-//Biblioteke za upravljanje senzorima
+
+//biblioteke za upravljanje senzorima
 #include <Wire.h>
 #include "Adafruit_SGP30.h"
 #include <DHT.h>
@@ -12,82 +16,82 @@
 #include <WiFi101.h>
 
 
-//Definiranje pinova za senzore
+//definiranje pinova za senzore
 #define DHTPIN 6
 #define Senzor_CO 0
 #define Senzor_plinova 1
 
-//Definiranje modela senzora za temperaturu i vlagu
+//definiranje modela senzora za temperaturu i vlagu
 #define DHTTYPE DHT11
 
-//Definiranje senzora kvalitete zraka
+//instanciranje senzora kvalitete zraka
 Adafruit_SGP30 sgp;
 
-// Šalje podatke o pin-u i vrsti senzora biblioteci
+// instanciranje senzora za temperaturu i vlažnost zraka
 DHT dht(DHTPIN, DHTTYPE);
 
-//Funkcija za računanje vlage zraka
+//funkcija za računanje vlage zraka
 uint32_t getAbsoluteHumidity(float temperature, float humidity) {
   const float absoluteHumidity = 216.7f * ((humidity / 100.0f) * 6.112f * exp((17.62f * temperature) / (243.12f + temperature)) / (273.15f + temperature)); // [g/m^3]
   const uint32_t absoluteHumidityScaled = static_cast<uint32_t>(1000.0f * absoluteHumidity); // [mg/m^3]
   return absoluteHumidityScaled;
 }
 
-//Podatci za spajanje na wifi mreže
+/// definiranje WiFi parametara
 
-//  SSID (ime) mreže
-char ssid[] = "SSER_ucenici";
-// Šifra za mrežu
-char pass[] = "12345678";
-
-//Postavlja status spajanja na mrežu
+char ssid[] = "SmartCity"; 
+char pass[] = "63346836"; 
 int status = WL_IDLE_STATUS;
 
-// Poziva biblioteku za mrežno spajanje
+// instanciranje WiFiClient objekta
 WiFiClient client;
 
-// Postavke ThingSpeak-a
-//API
+// ThingSpeak postavke
 char server[] = "api.thingspeak.com";
-//ID kanala
 String writeAPIKey = "Q4FUFDCOQO1ENQ8Y";
 
-//Zabilježi zadnje vrijeme spajanja
+// definiranje timer-a (interval od 120 sekundi)
 unsigned long lastConnectionTime = 0;
-//Šalje paket svako 20 sekundi
-const unsigned long postingInterval = 20L * 1000L;
+const unsigned long postingInterval = 120L * 1000L;
+
+/*
+******************** S E T U P ********************
+*/
 
 void setup() {
-  delay(1000);
-  //Testiranje izbrisat
+
+  // pokretanje serijske komunikacije
   Serial.begin(9600);
+  delay(50);
 
-  //Poziva biblioteku za senzor vlage i temparature
+  //inicijalizacija senzora vlage i temparature
   dht.begin();
-  // Pokušava se spjiti na wifi mrežu
+  
+  // spajanje na WiFi mrežu
   while ( status != WL_CONNECTED) {
-    //Spajanje na wpa/wpa2 mrežu
-    status = WiFi.begin(ssid);
+    status = WiFi.begin(ssid, pass);
+    Serial.print("Spajanje na "); Serial.println(ssid);
 
-    // Čekaj 10 sekundi da se spoji na mrežu
-    delay(10000);
-    //Ispunit
+    // inicijalizacija senzora za kvalitetu zraka,
+    // čekanje da vrati signal da je pokrenut
     if (!sgp.begin()) {
       while (1);
     }
   }
 }
 
-void loop() {
-  //testiranje izbrisat
-  Serial.print("TVOC "); Serial.print(sgp.TVOC); Serial.print(" ppb\t");
-  Serial.print("eCO2 "); Serial.print(sgp.eCO2); Serial.println(" ppm");
-  delay(1000);
-  // Ako je prošlo 20 sekundi od zadnjeg spajanja spaja se i šalje paket
-  if (millis() - lastConnectionTime > postingInterval) {
-    httpRequest();
 
-    //Ako nije očitao vrijednosti ponavlaj čitanje
+/*
+******************** L O O P ********************
+*/
+
+void loop() {
+
+  // Ako je prošlo 120 sekundi od zadnjeg spajanja spaja se i šalje podatke
+  if (millis() - lastConnectionTime > postingInterval) {
+    saljiPodatke();
+
+    //Ako nije očitao vrijednosti ponavlja čitanje
     if (!sgp.IAQmeasure()) {
       return;
     }
@@ -95,7 +99,7 @@ void loop() {
 
 }
 
-void httpRequest() {
+void saljiPodatke() {
 
   //Čitanje podataka senzora
   float h = dht.readHumidity();
@@ -103,10 +107,10 @@ void httpRequest() {
   int Sensor_CO = analogRead(Senzor_CO);
   int Sensor_plinova = analogRead(Senzor_plinova);
 
-  // Stvara paket podataka za slanje na ThingSpeak
+  // Stvara string za slanje na ThingSpeak
   String data = String("field1=" + String(Senzor_CO, DEC) + "&field2=" + String(t, DEC) + "&field3=" + String(h, DEC) + "&field4=" + String(sgp.TVOC, DEC) + "&field5=" + String(sgp.eCO2, DEC) + "&field6=" + String(Senzor_plinova, DEC));
 
-  // Zaustavlja sve aktivne konekcije prije slanja
+  // Zaustavlja sve aktivne veze prije slanja
   client.stop();
 
   // Šalje podatke na ThingSpeak
