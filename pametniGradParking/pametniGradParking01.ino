@@ -4,6 +4,7 @@ Tim: Pametni parking
 Autori: 
 	Adrian Prodan, 1.c
 	Bernard Miculinić, 1.c
+Mentor: Lovro Šverko, prof.
 Srednja škola za elektrotehniku i računalstvo, Rijeka
 Školska godina 2018./2019.
 */
