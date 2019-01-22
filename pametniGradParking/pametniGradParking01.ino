@@ -1,3 +1,11 @@
+/*
+Projekt: Pametni grad
+Tim: Pametni parking
+Autor: Adrian Prodan, 1.c
+Srednja škola za elektrotehniku i računalstvo, Rijeka
+Školska godina 2018./2019.
+*/
+
 #include <ThingSpeak.h>
 #include <SPI.h>
 #include <WiFi101.h>
