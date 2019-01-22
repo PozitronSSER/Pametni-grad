@@ -264,8 +264,8 @@ void setup() {
 	// pokretanje serijske komunikacije
   Serial.begin(9600);
   delay(50);
-
-  // spajanje na WiFi mrežu
+	
+	// spajanje na WiFi mrežu
   while ( status != WL_CONNECTED) {
     status = WiFi.begin(ssid, pass);
     Serial.print("Spajanje na "); Serial.println(ssid);
