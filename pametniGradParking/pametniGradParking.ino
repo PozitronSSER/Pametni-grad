@@ -2,7 +2,7 @@
 #include <SPI.h>
 #include <WiFi101.h>
 
-// Definiranje echo i trig pinova
+// Definiranje pinova
 
 #define echo1 6
 #define echo2 8
@@ -32,26 +32,28 @@ bool prethodnoStanje1;
 bool prethodnoStanje2;
 bool prethodnoStanje3;
 
-char ssid[] = "SmartCity"; //  your network SSID (name)
-char pass[] = "63346836"; // your network password
-
+// definiranje WiFi parametara
+char ssid[] = "SmartCity"; 
+char pass[] = "63346836"; 
 int status = WL_IDLE_STATUS;
 
-// Initialize the Wifi client library
+// instanciranje WiFiClient objekta
 WiFiClient client;
 
-// ThingSpeak Settings
+// ThingSpeak postavke
 char server[] = "api.thingspeak.com";
 String writeAPIKey = "7AHJM23DSEDESOZ0";
 
-unsigned long lastConnectionTime = 0; // track the last connection time
-const unsigned long postingInterval = 20L * 1000L; // post data every 120 seconds
+// definiranje timer-a (interval od 120 sekundi)
+unsigned long lastConnectionTime = 0; 
+const unsigned long postingInterval = 20L * 1000L; 
 
+/*
+---------- funkcije za mjerenje udaljenosti / zauzetosti parkirnog mjesta
+*/
 bool izmjeriUdaljenost1() {
-  // Postavlja trig1 na NISKO
   digitalWrite(trig1, LOW);
   delayMicroseconds(2);
-  // Stavlja trigPin na VISOKU razinu na 10 mikrosekundi
   digitalWrite(trig1, HIGH);
   delayMicroseconds(10);
   digitalWrite(trig1, LOW);
@@ -59,8 +61,8 @@ bool izmjeriUdaljenost1() {
   trajanje1 = pulseIn(echo1, HIGH);
   // Računa udaljenost
   udaljenost1 = trajanje1 * 0.034 / 2;
-  // Ispisuje udaljenost na Serijskom Monitoru
 
+  // određuje se stanje parkirnog mjesta: true - zauzeto, false - slobodno
   if (udaljenost1 < 5) {
     stanje1 = true;
     digitalWrite(ledCrvena1, HIGH);
@@ -72,23 +74,22 @@ bool izmjeriUdaljenost1() {
     digitalWrite(ledZelena1, HIGH);
   }
 
+  // debug
   Serial.print("Stanje 1: ");
   Serial.println(stanje1);
+  
+  //vraća stanje parkirnog mjesta
   return stanje1;
 }
 
 
 bool izmjeriUdaljenost2() {
-  // Postavlja trig2 na NISKO
   digitalWrite(trig2, LOW);
   delayMicroseconds(2);
-  // Stavlja trigPin na VISOKU razinu na 10 mikrosekundi
   digitalWrite(trig2, HIGH);
   delayMicroseconds(10);
   digitalWrite(trig2, LOW);
-  // Čita echoPIN, vraća vrijeme putovanja zvučnog vala u mikrosekundama
   trajanje2 = pulseIn(echo2, HIGH);
-  // Računa udaljenost
   udaljenost2 = trajanje2 * 0.034 / 2;
   if (udaljenost2 < 5) {
     stanje2 = true;
@@ -106,16 +107,12 @@ bool izmjeriUdaljenost2() {
 }
 
 bool izmjeriUdaljenost3() {
-  // Postavlja trig3 na NISKO
   digitalWrite(trig3, LOW);
   delayMicroseconds(2);
-  // Stavlja trigPin na VISOKU razinu na 10 mikrosekundi
   digitalWrite(trig3, HIGH);
   delayMicroseconds(10);
   digitalWrite(trig3, LOW);
-  // Čita echoPIN, vraća vrijeme putovanja zvučnog vala u mikrosekundama
   trajanje3 = pulseIn(echo3, HIGH);
-  // Računa udaljenost
   udaljenost3 = trajanje3 * 0.034 / 2;
 
   if (udaljenost3 < 5) {
@@ -134,15 +131,19 @@ bool izmjeriUdaljenost3() {
   return stanje3;
 }
 
+/*
+---------- funkcije za slanje podataka na ThingSpeak 
+*/
+
 void posaljiSve() {
 
-  // create data string to send to ThingSpeak
+  // kreiranje Stringa koji se šalje na ThingSpeak
   String data = String("field1 = " + String(stanje1, DEC) + "&field2 = " + String(stanje2, DEC) + "&field3 = " + String(stanje3, DEC));
 
-  // close any connection before sending a new request
+  // zatvaraju se sve veze prije slanja podataka
   client.stop();
 
-  // POST data to ThingSpeak
+  // POST na ThingSpeak preko porta 80 (HTTP)
   if (client.connect(server, 80)) {
     client.println("POST / update HTTP / 1.1");
     client.println("Host: api.thingspeak.com");
@@ -155,20 +156,15 @@ void posaljiSve() {
     client.print("\n\n");
     client.print(data);
 
-    // note the last connection time
+    // spremanje vremena posljednjeg spajanja
     lastConnectionTime = millis();
   }
 }
 
 void posaljiPrvi() {
 
-  // create data string to send to ThingSpeak
   String data = String("field1 = " + String(stanje1, DEC));
-
-  // close any connection before sending a new request
   client.stop();
-
-  // POST data to ThingSpeak
   if (client.connect(server, 80)) {
     client.println("POST / update HTTP / 1.1");
     client.println("Host: api.thingspeak.com");
@@ -180,21 +176,14 @@ void posaljiPrvi() {
     client.print(data.length());
     client.print("\n\n");
     client.print(data);
-
-    // note the last connection time
     lastConnectionTime = millis();
   }
 }
 
 void posaljiDrugi() {
 
-  // create data string to send to ThingSpeak
   String data = String("field2 = " + String(stanje2, DEC));
-
-  // close any connection before sending a new request
   client.stop();
-
-  // POST data to ThingSpeak
   if (client.connect(server, 80)) {
     client.println("POST / update HTTP / 1.1");
     client.println("Host: api.thingspeak.com");
@@ -206,21 +195,14 @@ void posaljiDrugi() {
     client.print(data.length());
     client.print("\n\n");
     client.print(data);
-
-    // note the last connection time
     lastConnectionTime = millis();
   }
 }
 
 void posaljiTreci() {
 
-  // create data string to send to ThingSpeak
   String data = String("field3 = " + String(stanje3, DEC));
-
-  // close any connection before sending a new request
   client.stop();
-
-  // POST data to ThingSpeak
   if (client.connect(server, 80)) {
     client.println("POST / update HTTP / 1.1");
     client.println("Host: api.thingspeak.com");
@@ -232,13 +214,16 @@ void posaljiTreci() {
     client.print(data.length());
     client.print("\n\n");
     client.print(data);
-
-    // note the last connection time
     lastConnectionTime = millis();
   }
 }
 
+/*
+******************** S E T U P ********************
+*/
+
 void setup() {
+	// definiranje U/I pinova
   pinMode(echo1, INPUT);
   pinMode(echo2, INPUT);
   pinMode(echo3, INPUT);
@@ -266,17 +251,22 @@ void setup() {
   digitalWrite (ledCrvena3, LOW);
   digitalWrite (ledZelena3, LOW);
 
+	// pokretanje serijske komunikacije
   Serial.begin(9600);
   delay(50);
 
-  // attempt to connect to Wifi network
+  // spajanje na WiFi mrežu
   while ( status != WL_CONNECTED) {
-    // Connect to WPA/WPA2 Wi-Fi network
     status = WiFi.begin(ssid, pass);
     Serial.print("Spajanje na "); Serial.println(ssid);
   }
 
-  stanje1 = izmjeriUdaljenost1();
+	/*
+	početno čitanje sa senzora zbog 
+	postavljanja vrijednosti u varijable prethodnoStanje,
+	slanje svih podataka na ThingSpeak kanal
+	*/  
+	stanje1 = izmjeriUdaljenost1();
   prethodnoStanje1 = stanje1;
   delay(50);
   stanje2 = izmjeriUdaljenost2();
@@ -287,12 +277,17 @@ void setup() {
   delay(50);
   posaljiSve();
 }
-
+/*
+******************** L O O P ********************
+*/
 void loop() {
 
+	// čitanje senzora
   stanje1 = izmjeriUdaljenost1();
+	// slanje podataka na ThingSpeak, ako se stanje promijenilo (zbog uštede podatkovnog prometa)
   if (prethodnoStanje1 != stanje1) {
     prethodnoStanje1 = stanje1;
+		// debug
     Serial.println("Šaljem Stanje 1");
     posaljiPrvi();
   }
@@ -315,8 +310,7 @@ void loop() {
   delay(50);
 
 
-  // if interval time has passed since the last connection,
-  // then connect again and send data
+  // slanje svih podataka svake dvije minute
   if (millis() - lastConnectionTime > postingInterval) {
     posaljiSve();
   }
