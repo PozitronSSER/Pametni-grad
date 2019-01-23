@@ -1,5 +1,6 @@
-###Optimizacija odvoza otpada
-##Tehnička dokumentacija
+### Optimizacija odvoza otpada
+
+## Tehnička dokumentacija
 Autori: Manuel Bradičić, Patrik Horvat, Vanja Ljubobratović
 Mentor: Lovro Šverko, prof.
 O projektu
