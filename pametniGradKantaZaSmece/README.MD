@@ -25,7 +25,7 @@ Iako postoji više metoda, mi smo se odlučili mjeriti popunjenost spremnika pom
 ## Hardware
 U ovome odjeljku su opisane sve fizičke komponente od kojih se sastoji projekt.
 
-##Popis komponenti
+## Popis komponenti
 
 ### Raspberry Pi 3
 Minijaturno računalo veličine kreditne kartice razvijeno 2016. godine sa 64 - bitnim quad - core procesorom na taktu od 1.2 GHz te jednim gigabajtom LPDDR2 radne memorije. Najčešći operativni sustav koji se koristi u radu s Raspberry Pi računalom jest Raspbian, operativni sustav baziran na Debian Linux-u. U ovome projektu smo koristili navedeni operacijski sustav te nam je Raspberry Pi računalo služilo kao koncentrator za sakupljanje podataka odnosno očitanja sa senzora koje mikroupravljač (u budućnosti više njih) šalje te kao kontrolna ploča sustava na koju je moguće ostvariti udaljeni pristup pomoću SSH ili VNC protokola.
