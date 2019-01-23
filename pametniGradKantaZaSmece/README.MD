@@ -1,15 +1,16 @@
-### Optimizacija odvoza otpada
+## Optimizacija odvoza otpada
 
-## Tehnička dokumentacija
+### Tehnička dokumentacija
 Autori: Manuel Bradičić, Patrik Horvat, Vanja Ljubobratović
 Mentor: Lovro Šverko, prof.
-O projektu
+## O projektu
 Neizostavna je karakteristika svakoga razvijenoga društva uz proizvodnju dobara također i generacija otpada kao produkt konzumacije i iskorištavanja spomenutih dobara te je njegova količina usko povezana s razvijenošću toga društva, države ili zajednice.
 Stoga jedna od osnovnih smjernica svakoga razvijenoga društva jest dakako racionalno raspolaganje i gospodarenje otpadom što uključuje brojne procese od sakupljanja i transportacije do njegova odlaganja na za to predviđena mjesta uz korištenje prikladnih i najoptimalnijih metoda.
 Zato smo se mi, učenici Srednje škole za elektrotehniku i računalstvo u Rijeci, htjeli uključiti i svojim znanjem na području programiranja, računalnih mreža i modernih tehnologija pomoći u rješavanju jednoga od najznačajnijih problema današnjice - odvoza otpada.
 Budući da je odvoz otpada toliko opširan i golem proces prisutan u svakom naseljenom području, a pogotovo u gusto naseljenim gradovima njegovom optimizacijom se mogu postići brojne pogodnosti, a smanjenje cijena odvoza, ušteda vremena i najvažnije za okoliš, smanjenje emisija CO2 plina samo su neke od njih.
 Kroz ostatak ove dokumentacije potanko ćemo objasniti na koji smo način upotrebom IoT (internet of things) tehnologije odlučili optimizirati i modernizirati način sakupljanja i odvoza otpada te tako doprinijeti našoj zajednici.
-Ideja
+
+## Ideja
 Što predstavlja najveći problem kod odvoza otpada?
 Naravno odgovor je da najveći problem predstavlja to što ne znamo koliko koji spremnik za otpad koji se nalazi negdje u gradu ili naselju sadrži otpada. Tako dolazimo do toga da se neki kamioni za odvoz vraćaju poluprazni dok se drugi vraćaju prekrcani u nemogućnosti da završe svoju rutu što zahtjeva ponovno zacrtavanje ruta ili slanje dodatnih kamiona. Time činimo ogromne ali i nepotrebne vremenske, novčane, ali i ekološke gubitke u vidu povećanja emisija CO2 plina.
 No što kada bismo znali koliko svaki spremnik sadrži otpada?
