@@ -20,8 +20,8 @@ Srednja škola za elektrotehniku i računalstvo, Rijeka
 
 /************************* Podatci o WiFi mreži *********************************/
 
-#define WLAN_SSID       "3D print"
-#define WLAN_PASS       "forzafiume1987"
+#define WLAN_SSID       "SmartCity"
+#define WLAN_PASS       "63346836"
 
 /************************* MQTT broker (Server IP:port) *********************************/
 
