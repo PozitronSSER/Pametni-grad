@@ -96,7 +96,7 @@ Ovaj tim će učiti osnove mikroupravljača na primjeru izrade semafora za autom
 
 ### Optimizacija odvoza otpada
 
-Ovaj tim će izraditi sustav upravljanja odvozom otpada.
+Ovaj tim će prilagoditi postojeći sustav upravljanja odvozom otpada novom sustavu.
 
 1. Manuel Bradičić (voditelj)
 2. Lovro Šverko (team management)
