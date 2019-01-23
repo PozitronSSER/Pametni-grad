@@ -24,3 +24,57 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 11. Korištenje sustava OpenCV i TensorFlow za razvoj pametne kamere
 12. Razvoj sustava upravljanje (web aplikacija, baza podataka, korisničko sučelje, mobilna aplikacija)
 
+## Timovi:
+
+# Programeri 
+1. Jakov Tomasić (voditelj)
+2. Sara Garaplija
+3. Vlado Komljenović
+4. Marko Mijajlović (team management)
+5. Teo Verbanac
+6. Vito Kinkela
+7. Antonio Heski
+# Meteorološka stanica
+1. Patrik Perčinić (voditelj)
+2. Dinko Vican Ajdinović (team management)
+3. Andrija Varga
+4. Niko Maričić
+# Parking
+1. Adrian Prodan (voditelj)
+2. Bernard Miculinić (team management)
+# Computer vision (kamera)
+1. Filip Jurković (voditelj i team management)
+2. Bernard Miculinić
+# Power management
+1. Vito Kinkela (team Management)
+2. Teo Verbanac (voditelj)
+# Komunikacija i sigurnost (mreže i protokoli)
+1. Andrija Varga (voditelj)
+2. Vlado Komljenović (team management)
+3. Nino Čandrlić
+# Rasvjeta
+1. Manuel Bradičić (voditelj)
+2. Adrian Prodan (team management)
+# Semafor (IoT tečajevi)
+1. Lovro Šverko (voditelj)
+2. Dinko Vican Ajdinović (team management)
+3. Andrija Varga
+4. Bernard Miculinić
+5. Sara Garaplija
+6. Patrik Perčinić
+7. Filip Jurković
+# Public relations and team management
+1. Lovro Šverko (voditelj)
+2. Dinko Vican Ajdinović (team management)
+# 3D modeliranje i printanje
+1. Filip Jurković (team management)
+2. Bernard Miculinić
+3. Matija Vicić
+4. Leon Valenta
+5. Mihael Žipovski
+6. Lovro Šverko (voditelj)
+# Mentori
+1. Jakov Tomasić(voditelj)
+2. Lovro Šverko (team management)
+3. Filip Jurković
+4. Manuel Bradičić
