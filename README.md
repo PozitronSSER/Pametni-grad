@@ -94,6 +94,13 @@ Ovaj tim će učiti osnove mikroupravljača na primjeru izrade semafora za autom
 5. Sara Garaplija
 6. Patrik Perčinić
 
+### Optimizacija odvoza otpada
+
+Ovaj tim će izraditi sustav upravljanja odvozom otpada.
+
+1. Manuel Bradičić (voditelj)
+2. Lovro Šverko (team management)
+
 ### Public relations and team management
 
 Ovaj tim će voditi zapisnike, davati izjave, pripremati prezentacije te moderirati komunikaciju između timova.
