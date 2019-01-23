@@ -26,7 +26,7 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 
 ## Timovi:
 
-# Programeri 
+### Programeri 
 1. Jakov Tomasić (voditelj)
 2. Sara Garaplija
 3. Vlado Komljenović
@@ -34,28 +34,28 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 5. Teo Verbanac
 6. Vito Kinkela
 7. Antonio Heski
-# Meteorološka stanica
+### Meteorološka stanica
 1. Patrik Perčinić (voditelj)
 2. Dinko Vican Ajdinović (team management)
 3. Andrija Varga
 4. Niko Maričić
-# Parking
+### Parking
 1. Adrian Prodan (voditelj)
 2. Bernard Miculinić (team management)
-# Computer vision (kamera)
+### Computer vision (kamera)
 1. Filip Jurković (voditelj i team management)
 2. Bernard Miculinić
-# Power management
+### Power management
 1. Vito Kinkela (team Management)
 2. Teo Verbanac (voditelj)
-# Komunikacija i sigurnost (mreže i protokoli)
+### Komunikacija i sigurnost (mreže i protokoli)
 1. Andrija Varga (voditelj)
 2. Vlado Komljenović (team management)
 3. Nino Čandrlić
-# Rasvjeta
+### Rasvjeta
 1. Manuel Bradičić (voditelj)
 2. Adrian Prodan (team management)
-# Semafor (IoT tečajevi)
+### Semafor (IoT tečajevi)
 1. Lovro Šverko (voditelj)
 2. Dinko Vican Ajdinović (team management)
 3. Andrija Varga
@@ -63,17 +63,17 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 5. Sara Garaplija
 6. Patrik Perčinić
 7. Filip Jurković
-# Public relations and team management
+### Public relations and team management
 1. Lovro Šverko (voditelj)
 2. Dinko Vican Ajdinović (team management)
-# 3D modeliranje i printanje
+### 3D modeliranje i printanje
 1. Filip Jurković (team management)
 2. Bernard Miculinić
 3. Matija Vicić
 4. Leon Valenta
 5. Mihael Žipovski
 6. Lovro Šverko (voditelj)
-# Mentori
+### Mentori
 1. Jakov Tomasić(voditelj)
 2. Lovro Šverko (team management)
 3. Filip Jurković
