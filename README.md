@@ -34,9 +34,8 @@ Zadatak tima programera je razvoj android i web aplikacije kao sustava za upravl
 2. Sara Garaplija
 3. Vlado Komljenović
 4. Marko Mijajlović (team management)
-5. Teo Verbanac
-6. Vito Kinkela
-7. Antonio Heski
+5. Vito Kinkela
+6. Antonio Heski
 
 ### Meteorološka stanica
 
@@ -66,7 +65,7 @@ Ovaj tim će izraditi kameru koja će prepoznavati objekte, baziranu na Raspberr
 Ovaj tim će razviti napajanje mikroupravljača na bazi obnovljivih izvora energije.
 
 1. Vito Kinkela (team Management)
-2. Teo Verbanac (voditelj)
+2. Lovro Šverko (voditelj)
 
 ### Komunikacija i sigurnost (mreže i protokoli)
 
@@ -74,7 +73,7 @@ Ovaj tim će brinuti za komunikaciju između raznih uređaja te za sigurnost pod
 
 1. Andrija Varga (voditelj)
 2. Vlado Komljenović (team management)
-3. Nino Čandrlić
+
 
 ### Rasvjeta
 
