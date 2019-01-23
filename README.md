@@ -21,4 +21,6 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 8. Slanje podataka bežičnom vezom
 9. Korištenje obnovljive energije
 10. Izrada prototipa (3D print)
-11. Razvoj sustava upravljanje (web aplikacija, baza podataka, korisničko sučelje, mobilna aplikacija)
+11. Korištenje sustava OpenCV i TensorFlow za razvoj pametne kamere
+12. Razvoj sustava upravljanje (web aplikacija, baza podataka, korisničko sučelje, mobilna aplikacija)
+
