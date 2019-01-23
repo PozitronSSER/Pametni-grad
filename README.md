@@ -26,7 +26,10 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 
 ## Timovi:
 
-### Programeri 
+### Programeri
+
+Zadatak tima programera je razvoj android i web aplikacije kao sustava za upravljanje rasvjetom, prometom, parkingom, praćenje kvalitete zraka i meteoroloških podataka te postavljanje LAMP servera na Raspberry Pi 3 s potrebnom bazom podataka za spremanje svih prikupljenih podataka (SQL). Android i web aplikacija će koristiti prikupljene podatke iz baze podataka za prikaz stanja u realnom vremenu.
+
 1. Jakov Tomasić (voditelj)
 2. Sara Garaplija
 3. Vlado Komljenović
@@ -34,46 +37,85 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 5. Teo Verbanac
 6. Vito Kinkela
 7. Antonio Heski
+
 ### Meteorološka stanica
+
+Ovaj tim će izraditi uređaj koji će prikupljati meteorološke podatke i kvalitetu zraka te ih slati na Cloud server s kojega će se podaci spremati u bazu podataka.
+
 1. Patrik Perčinić (voditelj)
 2. Dinko Vican Ajdinović (team management)
 3. Andrija Varga
 4. Niko Maričić
+
 ### Parking
+
+Ovaj tim će izraditi senzore za parking te podatke slati na Cloud server s kojega će se podaci spremati u bazu podataka.
+
 1. Adrian Prodan (voditelj)
 2. Bernard Miculinić (team management)
+
 ### Computer vision (kamera)
+
+Ovaj tim će izraditi kameru koja će prepoznavati objekte, baziranu na Raspberry Pi mikroračunalu te OpenCV i Tensorflow sustavima.
+
 1. Filip Jurković (voditelj i team management)
 2. Bernard Miculinić
+
 ### Power management
+
+Ovaj tim će razviti napajanje mikroupravljača na bazi obnovljivih izvora energije.
+
 1. Vito Kinkela (team Management)
 2. Teo Verbanac (voditelj)
+
 ### Komunikacija i sigurnost (mreže i protokoli)
+
+Ovaj tim će brinuti za komunikaciju između raznih uređaja te za sigurnost podataka.
+
 1. Andrija Varga (voditelj)
 2. Vlado Komljenović (team management)
 3. Nino Čandrlić
+
 ### Rasvjeta
+
+Ovaj tim će izraditi sustav automatskog upravljanja uličnom rasvjetom.
+
 1. Manuel Bradičić (voditelj)
 2. Adrian Prodan (team management)
+
 ### Semafor (IoT tečajevi)
-1. Lovro Šverko (voditelj)
+
+Ovaj tim će učiti osnove mikroupravljača na primjeru izrade semafora za automobile i pješake. Izrađeni semafori će se koristiti za automatsko upravljanje semaforima na raskršću pomoću pametne kamere i/ili raznih senzora .
+
+1. Filip Jurković (voditelj)
 2. Dinko Vican Ajdinović (team management)
 3. Andrija Varga
 4. Bernard Miculinić
 5. Sara Garaplija
 6. Patrik Perčinić
-7. Filip Jurković
+
 ### Public relations and team management
+
+Ovaj tim će voditi zapisnike, davati izjave, pripremati prezentacije te moderirati komunikaciju između timova.
+
 1. Lovro Šverko (voditelj)
 2. Dinko Vican Ajdinović (team management)
+
 ### 3D modeliranje i printanje
+
+Ovaj tim će izraditi 3D modele za potrebe ovog projekta.
+
 1. Filip Jurković (team management)
 2. Bernard Miculinić
 3. Matija Vicić
 4. Leon Valenta
 5. Mihael Žipovski
 6. Lovro Šverko (voditelj)
+
 ### Mentori
+
+Mentori pomažu svim timovima, po potrebi.
+
 1. Jakov Tomasić(voditelj)
 2. Lovro Šverko (team management)
 3. Filip Jurković
