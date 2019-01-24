@@ -10,6 +10,11 @@ Pametan grad integrira sve funkcije javnih usluga poput rasvjete, odlaganje otpa
 
 Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i znanja, koje se bazira na internet tehnologijama, bežičnim komunikacijskim sustavima i ostalim senzorima čiji je temelj tehnologija Internet of Things (IoT). Pojam IoT podrazumijeva instalaciju raznih senzora i njihovo povezivanje u lokalne mreže i gradsku internet mrežu, kako bi se dobila funkcija prepoznavanja, praćenja, nadzora i upravljanja objektima. Na taj način se svakodnevno prikuplja ogromna količina podataka koju je potrebno analizirati i pravilno iskoristiti, stoga je osmišljena tehnologija Big Data koja objedinjuje sve prikupljene podatke i olakšava njihovo razumijevanje. Samo tako je moguće integrirati funkcionalnosti pametnih rješenja i IoT unaprjeđenja da bi se povezale sve cjeline pametnog grada.
 
+## Video 
+
+[Senzori za parking i kvalitetu zraka šalju podatke na cloud](https://youtu.be/Tnwm2xuqHHU)
+
+
 ## Sadržaj programa    
 1. Programiranje mikroupravljača (C++)
 2. Postavljanje sustava na mikroračunalo Raspberry Pi (Linux, LAMP, phpMyAdmin)
