@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="logotransparent.ico" />
+        <title>SmartCity</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <script>
+            window.onload = function loadXMLDoc(){
+                var xhttp=new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if(xhttp.readyState==4 && xhttp.status==200){
+                        var tSpeakResponse = JSON.parse(xhttp.responseText);
+                        var string1 = JSON.stringify(tSpeakResponse.feeds[0].field1);
+                        var string2 = JSON.stringify(tSpeakResponse.feeds[0].field2);
+
+                        string1=string1.substring(1, string1.length-1);
+                        string2=string2.substring(1, string2.length-1) + " 	°C";
+
+                        document.getElementById("ID").innerHTML = string1;
+                        document.getElementById("Temperatura").innerHTML = string2;
+                        console.log(tSpeakResponse);
+                    }
+                };
+                xhttp.open("GET", "https://api.thingspeak.com/channels/630034/feeds.json?api_key=Y4KQ33L0LZM0GSZX&results=1", true);
+                xhttp.send();
+            }
+        </script>
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#">SmartCity</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                      </ul>
+                      <div style="color:white;">SŠER, 2019</div>
+                    </div>
+            </nav>
+        </br>
+        <div class="container" style="text-align:right;">
+        <div class="dropdown"></div>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Stanice
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="index.html">Stanica 1</a>
+                  <a class="dropdown-item" href="#">Stanica 2</a>
+                  <a class="dropdown-item" href="#">Stanica 3</a>
+                </div>
+              </div>
+        </br>
+            <div class="container">
+                <h1 style="text-align:center;">Stanica 2</h1></br>
+                  <div class="row">
+                        <div class="col-sm-4">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title" style="text-align:center;">Meteorološka stanica</h5>
+                              <div class="card-text"><b>ID:</b></div>
+                              <div class="card-text" id="ID"></div>
+                            </br>
+                            <div class="card-text"><b>Temperatura:</b></div>
+                              <div id="Temperatura"></div> </br> </br> </br> </br> </br> </br> </br>
+                              <a href="stanica2.html" class="btn btn-secondary">Osvježi</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title" style="text-align:center;">Kvaliteta zraka</h5>
+                              <div class="card-text"><b>TVOC:</b></div>
+                              <div class="card-text" id="ID"></div>
+                            </br>
+                            <div class="card-text"><b>eCO2:</b></div>
+                              <div id="Temperatura"></div> </br> </br> </br> </br> </br> </br> </br> </br> </br>
+                              <a href="stanica2.html" class="btn btn-secondary">Osvježi</a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                                <div class="card">
+                                  <div class="card-body">
+                                    <h5 class="card-title" style="text-align:center;">Rasvjeta</h5>
+                                    <div class="card-text"><b>Razina svjetlosti</b></div>
+                                    <div class="card-text" id="razsvj"></div>
+                                  </br>
+                                  <div class="card-text"><b>Pokret detektiran:</b></div>
+                                    <div id="pokretdet"></div> </br>
+
+                                    <div class="card-text"><b>Vidljivost vozila</b></div>
+                                    <div class="card-text" id="vidvozila"></div></br>
+
+                                    <div class="card-text"><b>Vidljivost pješaka</b></div>
+                                    <div class="card-text" id="vidpjesaka"></div>
+                                  </br>
+                                  </br> </br> </br> </br>
+                                    <a href="stanica2.html" class="btn btn-secondary">Osvježi</a>
+                                  </div>
+                                </div>
+                              </div>
+      
+
+
+                        </div>
+                      </div>
+                    </div>
+                </br>
+                <div class="container">
+                    <div class="row">
+                            <div class="col-sm-12">
+                                    <div class="card">
+                                      <div class="card-body">
+                                        <h5 class="card-title" style="text-align:center;">Parking</h5>
+                                        <img src="parking.png" class="img-fluid" alt="Responsive image"></br>
+                                        <b>Ukupno mjesta slobodno: </b> </br>
+                                    </br>
+                                        <a href="stanica2.html" class="btn btn-secondary">Osvježi</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                    </div>
+    
+        <div class="container">
+                <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Vrijeme ulaza</th>
+                            <th scope="col">Parking plaćen do</th>
+                            <th scope="col">Registracija</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">0</th>
+                            <td>2018-11-17 16:34</td>
+                            <td>2018-11-17 17:34</td>
+                            <td>RI-846-AL</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>2018-11-17 16:40</td>
+                            <td>2018-11-17 17:40</td>
+                            <td>RI-471-OT</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>2018-11-17 16:59</td>
+                            <td>2018-11-17 17:59</td>
+                            <td>RI-543-RM</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+        </div>
+    </body>
+</html>
