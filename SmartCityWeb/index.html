@@ -22,18 +22,27 @@
       xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
           var tSpeakResponse = JSON.parse(xhttp.responseText);
-          var string1 = JSON.stringify(tSpeakResponse.feeds[0].field1);
-          var string2 = JSON.stringify(tSpeakResponse.feeds[0].field2);
+          var co = JSON.stringify(tSpeakResponse.feeds[0].field1);
+          var temperatura = JSON.stringify(tSpeakResponse.feeds[0].field2);
+          var vlaga=JSON.stringify(tSpeakResponse.feeds[0].field3);
+          var co2 = JSON.stringify(tSpeakResponse.feeds[0].field5);
+          var mq6 = JSON.stringify(tSpeakResponse.feeds[0].field6);
 
-          string1 = string1.substring(1, string1.length - 1);
-          string2 = string2.substring(1, string2.length - 1) + " 	°C";
+          vlaga=vlaga.substring(1, vlaga.length-4) + " %";          
+          temperatura = temperatura.substring(1, temperatura.length - 4) + " 	°C";
+          co = co.substring(1, co.length-1);
+          co2 = co2.substring(1, co2.length-1);
+          mq6=mq6.substring(1, mq6.length-1);
 
-          document.getElementById("ID").innerHTML = string1;
-          document.getElementById("Temperatura").innerHTML = string2;
+          document.getElementById("CO").innerHTML = co;
+          document.getElementById("vlaga").innerHTML = vlaga;          
+          document.getElementById("temperatura").innerHTML = temperatura;
+          document.getElementById("co2").innerHTML=co2;
+          document.getElementById("mq6").innerHTML=mq6;
           console.log(tSpeakResponse);
         }
       };
-      xhttp.open("GET", "https://api.thingspeak.com/channels/630034/feeds.json?api_key=Y4KQ33L0LZM0GSZX&results=1", true);
+      xhttp.open("GET", "https://api.thingspeak.com/channels/668488/feeds.json?api_key=RZPB1O70U9A9ZK4Y&results=1", true);
       xhttp.send();
       load2();
     }
@@ -84,6 +93,44 @@
       };
       xhttp2.open("GET", "https://api.thingspeak.com/channels/630036/feeds.json?api_key=F62D045TYTBVDYQY&results=1", true);
       xhttp2.send();
+      parkingGet();
+    }
+
+    function parkingGet(){
+      var xhttp3 = new XMLHttpRequest();
+      var slobodnihMjesta=0;
+      xhttp3.onreadystatechange = function () {
+        if (xhttp3.readyState == 4 && xhttp3.status == 200) {
+          var tSpeakResponse3 = JSON.parse(xhttp3.responseText);
+          //var TVOC = JSON.stringify(tSpeakResponse3.feeds[0].field6);
+          //var eCO2 = JSON.stringify(tSpeakResponse3.feeds[0].field7);
+          var mjesto1 = JSON.stringify(tSpeakResponse3.feeds[0].field1);
+          mjesto1 = mjesto1.substring(1, mjesto1.length-1);
+
+          var mjesto2 = JSON.stringify(tSpeakResponse3.feeds[0].field2);
+          mjesto2 = mjesto2.substring(1, mjesto2.length-1);
+
+          var mjesto3= JSON.stringify(tSpeakResponse3.feeds[0].field3);
+          mjesto3 = mjesto3.substring(1, mjesto3.length-1);
+          if(mjesto1=="0")slobodnihMjesta++;
+          if(mjesto2=="0")slobodnihMjesta++;
+          if(mjesto3=="0")slobodnihMjesta++;
+
+          console.log(mjesto1 + mjesto2 + mjesto3);
+          document.getElementById("ukupnoslobodno").innerHTML=slobodnihMjesta;
+          if(mjesto1==="1" && mjesto2==="0" && mjesto3==="0")document.getElementById("parkingslika").src="parking23.png";
+          if(mjesto1==="0" && mjesto2==="1" && mjesto3==="0")document.getElementById("parkingslika").src="parking13.png";
+          if(mjesto1==="0" && mjesto2==="0" && mjesto3==="1")document.getElementById("parkingslika").src="parking12.png";
+          if(mjesto1==="1" && mjesto2==="1" && mjesto3==="0")document.getElementById("parkingslika").src="parking3.png";
+          if(mjesto1==="0" && mjesto2==="1" && mjesto3==="1")document.getElementById("parkingslika").src="parking1.png";
+          if(mjesto1==="1" && mjesto2==="0" && mjesto3==="0")document.getElementById("parkingslika").src="parking23.png";
+          if(mjesto1==="1" && mjesto2==="0" && mjesto3==="1")document.getElementById("parkingslika").src="parking2.png";
+          if(mjesto1==="1" && mjesto2==="1" && mjesto3==="1")document.getElementById("parkingslika").src="parking0.png";
+          console.log(tSpeakResponse3);
+        }
+      };
+      xhttp3.open("GET", "https://api.thingspeak.com/channels/629316/feeds.json?api_key=YKPQUEH22XA0MPVE&results=1", true);
+      xhttp3.send();
     }
   </script>
 
@@ -110,8 +157,8 @@
       Stanice
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Stanica 1</a>
-      <a class="dropdown-item" href="stanica2.html">Stanica 2</a>
+      <a class="dropdown-item" href="index.html">Stanica 1</a>
+      <a class="dropdown-item" href="#">Stanica 2</a>
       <a class="dropdown-item" href="#">Stanica 3</a>
     </div>
   </div>
@@ -123,11 +170,11 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title" style="text-align:center;"><b>Meteorološka stanica 1</b></h5>
-            <div class="card-text"><b>ID:</b></div>
-            <div class="card-text" id="ID">...</div>
+            <div class="card-text"><b>Vlaga:</b></div>
+            <div class="card-text" id="vlaga">...</div>
             </br>
             <div class="card-text"><b>Temperatura:</b></div>
-            <div id="Temperatura">...</div></br></br></br></br></br></br></br>
+            <div id="temperatura">...</div></br></br></br></br></br></br></br></br></br></br></br></br></br>
             <a href="index.html" class="btn btn-secondary">Osvježi</a>
           </div>
         </div>
@@ -141,7 +188,16 @@
             </br>
             <div class="card-text"><b>eCO2:</b></div>
             <div id="eCO2">...</div>
-            </br></br></br></br></br></br></br>
+          </br>
+          <div class="card-text"><b>Razina CO:</b></div>
+          <div id="CO">...</div>
+        </br>
+        <div class="card-text"><b>Razina CO2:</b></div>
+        <div id="co2">...</div>
+        </br>
+          <div class="card-text"><b>MQ-6 plin:</b></div>
+            <div id="mq6">...</div>
+            </br></br></br></br>
             <a href="index.html" class="btn btn-secondary">Osvježi</a>
           </div>
         </div>
@@ -160,7 +216,7 @@
             <div class="card-text" id="vidvozila">...</div></br>
 
             <div class="card-text"><b>Vidljivost pješaka:</b></div>
-            <div class="card-text" id="vidpjesaka">...</div></br>
+            <div class="card-text" id="vidpjesaka">...</div></br></br></br></br></br></br></br>
             <a href="index.html" class="btn btn-secondary">Osvježi</a>
           </div>
         </div>
@@ -174,8 +230,9 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title" style="text-align:center;">Parking</h5>
-            <img src="parking1.png" class="img-fluid" alt="Responsive image" id="parkingslika"></br>
+            <img src="parking123.png" class="img-fluid" alt="Responsive image" id="parkingslika"></br>
             <b>Ukupno mjesta slobodno: </b> </br>
+            <div class="card-text" id="ukupnoslobodno">...</div>
             </br>
             <a href="index.html" class="btn btn-secondary">Osvježi</a>
           </div>
