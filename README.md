@@ -3,7 +3,7 @@
 ## Ciljevi
 Glavni ciljevi ovog programa su razviti centralizirani sustav upravljanja javnim uslugama, razviti interes i sposobnost učenika za nastavak obrazovanja u području računalstva te ih potaknuti na obrtnički rad i samozapošljavanje nakon završetka programa.
 
-Slijedeći cilj ovog programa je izložiti učeničke radove na Državnoj smotri učeničkih radova iz područja elektrotehnike i računalstva na Fakultetu elektrotehnike i računalstva u Zagrebu i na istalim sličnim smotrama i izložbama učeničkih radova.
+Slijedeći cilj ovog programa je izložiti učeničke radove na Državnoj smotri učeničkih radova iz područja elektrotehnike i računalstva na Fakultetu elektrotehnike i računalstva u Zagrebu i na ostalim sličnim smotrama i izložbama učeničkih radova.
 
 ## Opis
 Pametan grad integrira sve funkcije javnih usluga poput rasvjete, odlaganje otpada,  prometa ili proizvodnje energije te na taj način povećava njihovu efikasnost, smanjuje troškove električne energije, ubrzava komunikaciju među spomenutim podsustavima i znatno smanjuje emisije CO2. Pametan grad se može najjednostavnije definirati kao sustav koji koristi digitalne i komunikacijske tehnologije da zadovolji sve potrebe svojih građana te unaprijedi učinkovitost gradskih usluga. Pametan grad uz to smanjuje troškove i potrošnju energije, što stvara čišći okoliš i podiže životni standard stanovnika.
@@ -16,7 +16,7 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 
 [Senzori za parking i kvalitetu zraka šalju podatke na cloud](https://youtu.be/Tnwm2xuqHHU)
 
-[Web aplikacija (u razvoju)](https://www.pozitron.com.hr/pametniGrad) {:target="_blank"}
+[Web aplikacija (u razvoju)](https://www.pozitron.com.hr/pametniGrad)
 
 ## Sadržaj programa    
 1. Programiranje mikroupravljača (C++)
