@@ -18,6 +18,9 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 
 [Web aplikacija (u razvoju)](https://www.pozitron.com.hr/pametniGrad)
 
+[Primjer rada senzora, web aplikacije i Android aplikacije](https://youtu.be/cBkZFNiSIS4)
+Video je sniman na tri različite fizičke lokacije. Na jednoj su bili senzori, na drugoj web aplikacija i prikaz podataka na cloudu, a na trećoj lokaciji Android aplikacija. Sve je snimano u realnom vremenu kako bi se prikazala funkcionalnost sustava.
+
 ## Sadržaj programa    
 1. Programiranje mikroupravljača (C++)
 2. Postavljanje sustava na mikroračunalo Raspberry Pi (Linux, LAMP, phpMyAdmin)
