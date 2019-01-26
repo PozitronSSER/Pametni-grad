@@ -12,7 +12,7 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 
 ## Promo 
 
-[Reportaža 24sata: 'Pametni grad' u Hrvatskoj: Želimo ljudima uštedjeti novac](https://www.24sata.hr/video/pametni-grad-u-hrvatskoj-zelimo-ljudima-ustedjeti-novac-602395)
+[Reportaža 24sata: 'Pametni grad' u Hrvatskoj](https://www.24sata.hr/video/pametni-grad-u-hrvatskoj-zelimo-ljudima-ustedjeti-novac-602395)
 
 [Senzori za parking i kvalitetu zraka šalju podatke na cloud](https://youtu.be/Tnwm2xuqHHU)
 
