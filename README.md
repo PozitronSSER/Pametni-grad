@@ -16,7 +16,7 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 
 [Senzori za parking i kvalitetu zraka šalju podatke na cloud](https://youtu.be/Tnwm2xuqHHU)
 
-[Web aplikacija (u razvoju)](www.pozitron.com.hr/pametniGrad)
+[Web aplikacija (u razvoju)](https://www.pozitron.com.hr/pametniGrad)
 
 ## Sadržaj programa    
 1. Programiranje mikroupravljača (C++)
