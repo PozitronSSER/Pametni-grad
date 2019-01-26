@@ -12,11 +12,11 @@ Pametni gradovi su proizvod ubrzanog razvoja novih informacijskih tehnologija i 
 
 ## Promo 
 
-[Reportaža 24sata](https://www.24sata.hr/video/pametni-grad-u-hrvatskoj-zelimo-ljudima-ustedjeti-novac-602395){:target="_blank"}
+[Reportaža 24sata](https://www.24sata.hr/video/pametni-grad-u-hrvatskoj-zelimo-ljudima-ustedjeti-novac-602395)
 
-[Senzori za parking i kvalitetu zraka šalju podatke na cloud](https://youtu.be/Tnwm2xuqHHU){:target="_blank"}
+[Senzori za parking i kvalitetu zraka šalju podatke na cloud](https://youtu.be/Tnwm2xuqHHU)
 
-<a href="https://www.pozitron.com.hr/pametniGrad" target="_blank">Web aplikacija (u razvoju)</a>
+<a href="https://www.pozitron.com.hr/pametniGrad" target="blank">Web aplikacija (u razvoju)</a>
 
 ## Sadržaj programa    
 1. Programiranje mikroupravljača (C++)
