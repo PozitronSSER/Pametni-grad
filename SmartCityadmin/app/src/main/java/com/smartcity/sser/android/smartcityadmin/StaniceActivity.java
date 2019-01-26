@@ -1,16 +1,3 @@
-/*
-Android aplikacija koja pokazuje popis svih dostupnih podataka organiziranih po stanicama.
-
-Projekt: Pametni grad
-Tim: Programeri
-Autor: 
-	Jakov Tomasić, 3.d
-Mentor: Lovro Šverko, prof.
-Srednja škola za elektrotehniku i računalstvo, Rijeka
-Školska godina 2018./2019.
-
-*/
-
 package com.smartcity.sser.android.smartcityadmin;
 
 import android.app.LoaderManager;
@@ -39,7 +26,7 @@ public class StaniceActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = StaniceActivity.class.getName();
 
-    String requestUrl1, requestUrl2, requestUrl3;
+    String requestUrl1, requestUrl2;
 
     StaniceAdapter staniceAdapter;
 
@@ -54,9 +41,8 @@ public class StaniceActivity extends AppCompatActivity {
         setTitle(getResources().getString(R.string.stanice));
 
         // add query parameters in string requests
-        requestUrl1 = JSONHandler.makeURL(Data.JSON_REQUEST_URL1);
-        requestUrl2 = JSONHandler.makeURL(Data.JSON_REQUEST_URL2);
-        requestUrl3 = JSONHandler.makeURL(Data.JSON_REQUEST_URL3);
+        requestUrl1 = JSONHandler.makeURL(Data.JSON_REQUEST_MET_STANICA);
+        requestUrl2 = JSONHandler.makeURL(Data.JSON_REQUEST_PARKING);
 
         // init progress bar for loading (getting json)
         progressBar = findViewById(R.id.progress);
@@ -65,11 +51,17 @@ public class StaniceActivity extends AppCompatActivity {
         // init no internet connection watermark for displaying error if needed
         noInternetConnectionIV = findViewById(R.id.no_internet_connection_IV);
 
+        /*
         if(Data.refresh) {
             refresh();
         } else {
             refreshLayout();
         }
+        */
+
+        refreshLayout();
+
+        Data.doRefreshes();
 
     }
 
@@ -115,9 +107,6 @@ public class StaniceActivity extends AppCompatActivity {
                                 break;
                             case 2:
                                 url = new URL(requestUrl2);
-                                break;
-                            case 3:
-                                url = new URL(requestUrl3);
                                 break;
                             default:
                                 Log.e(LOG_TAG, "Channel could not be handled");

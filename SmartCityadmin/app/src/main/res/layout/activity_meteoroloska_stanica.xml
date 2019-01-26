@@ -52,7 +52,7 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:paddingLeft="24dp"
-            android:text="@string/smjerVjetra"
+            android:text="@string/razinaCO2"
             android:textSize="16sp"
             android:textColor="@color/textColor"/>
 
@@ -63,7 +63,7 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:paddingLeft="24dp"
-            android:text="@string/kolicinaPadalina"
+            android:text="@string/razinaCO"
             android:textSize="16sp"
             android:textColor="@color/textColor"/>
 
@@ -74,7 +74,7 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:paddingLeft="24dp"
-            android:text="@string/tlakZraka"
+            android:text="@string/opasniPlinoviFalse"
             android:textSize="16sp"
             android:textColor="@color/textColor"/>
 

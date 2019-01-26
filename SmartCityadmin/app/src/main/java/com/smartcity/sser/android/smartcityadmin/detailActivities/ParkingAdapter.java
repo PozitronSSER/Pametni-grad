@@ -36,14 +36,17 @@ public class ParkingAdapter extends ArrayAdapter<ParkirnoMjesto> {
 
         TextView textViewStanica = (TextView) listItemView.findViewById(R.id.TVParking);
 
+        int parkirnoMjestoID = Data.sveStanice.elementAt(idInVector).parkirnaMjesta.elementAt(position).parkirnoMjestoID;
+        Boolean stanjeParkirnogMjesta = Data.sveStanice.elementAt(idInVector).parkirnaMjesta.elementAt(position).stanjeParkirnogMjesta;
 
         // npr. "Parking 0: Slobodan"
-        String writeMessage = getContext().getResources().getString(R.string.parking) + " " +
-                Data.sveStanice.elementAt(idInVector).parkirnaMjesta.elementAt(position).parkirnoMjestoID + ": " +
-                (Data.sveStanice.elementAt(idInVector).parkirnaMjesta.elementAt(position).stanjeParkirnogMjesta ?
-                        getContext().getResources().getString(R.string.zauzet) :
-                        getContext().getResources().getString(R.string.slobodan));
-
+        String writeMessage = getContext().getResources().getString(R.string.parking) + " " + parkirnoMjestoID + ": ";
+        if(stanjeParkirnogMjesta != null)
+        {
+            writeMessage += (stanjeParkirnogMjesta ?
+                    getContext().getResources().getString(R.string.zauzet) :
+                    getContext().getResources().getString(R.string.slobodan));
+        }
 
         // Write if parking is slobodan
         textViewStanica.setText(writeMessage);

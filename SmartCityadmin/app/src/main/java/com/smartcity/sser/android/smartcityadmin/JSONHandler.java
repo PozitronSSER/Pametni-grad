@@ -117,8 +117,6 @@ public class JSONHandler {
                     doChannel1(obj2);
                 } else if(channel == 2) {
                     doChannel2(obj2);
-                } else if(channel == 3) {
-                    doChannel3(obj2);
                 }
 
             }
@@ -133,8 +131,8 @@ public class JSONHandler {
     }
 
 
-
-    public static void doChannel1(JSONObject obj2) throws JSONException {
+    // Meteroloska stanica
+    public static void doChannel1(JSONObject obj2) {
         Integer tempStanicaID;
         try {
             tempStanicaID = Integer.parseInt(obj2.getString("field1"));
@@ -167,16 +165,16 @@ public class JSONHandler {
             tempStanica.vlagaZraka = Double.parseDouble(obj2.getString("field3"));
         } catch (Exception e) {}
         try {
-            tempStanica.brzinaVjetra = Double.parseDouble(obj2.getString("field4"));
+            tempStanica.kvalitetaZraka = Double.parseDouble(obj2.getString("field4"));
         } catch (Exception e) {}
         try {
-            tempStanica.smjerVjetra = Double.parseDouble(obj2.getString("field5"));
+            tempStanica.razinaCO2 = Double.parseDouble(obj2.getString("field5"));
         } catch (Exception e) {}
         try {
-            tempStanica.kolicinaPadalina = Double.parseDouble(obj2.getString("field6"));
+            tempStanica.razinaCO = Double.parseDouble(obj2.getString("field6"));
         } catch (Exception e) {}
         try {
-            tempStanica.tlakZraka = Double.parseDouble(obj2.getString("field7"));
+            tempStanica.opasniPlinovi = Integer.parseInt(obj2.getString("field7")) == 1;
         } catch (Exception e) {}
 
 
@@ -186,58 +184,41 @@ public class JSONHandler {
 
     }
 
-    public static void doChannel2(JSONObject obj2) throws JSONException {
-        Integer tempStanicaID;
-        try {
-            tempStanicaID = Integer.parseInt(obj2.getString("field1"));
-        } catch (Exception e) {
-            return;
-        }
-        Integer idInVector = null;
-
-        // Loop through all Stanica and check if stanica with same ID exist
-        for(int j = 0; j < Data.sveStanice.size(); j++) { // TODO: optimize, implement DB
-            if(Data.sveStanice.elementAt(j).stanicaID == tempStanicaID) {
-                idInVector = j;
-                break;
-            }
-        }
-
+    // Parking
+    public static void doChannel2(JSONObject obj2) {
+        Integer tempStanicaID = 0;
         Stanica tempStanica;
-
-        // If Stanica with same ID doesn't exist create new one
-        if(idInVector == null) {
+        if(Data.sveStanice.isEmpty()) {
             tempStanica = new Stanica(tempStanicaID);
-        } else { // If it exist change it's data
-            tempStanica = Data.sveStanice.elementAt(idInVector);
+        } else {
+            tempStanicaID = Data.sveStanice.get(0).stanicaID;
+            tempStanica = Data.sveStanice.get(0);
+        }
+
+        tempStanica.parkirnaMjesta.clear();
+        for(int i = 1; i <= 3; i++)
+        {
+            tempStanica.parkirnaMjesta.add(new ParkirnoMjesto(i));
         }
 
         try {
-            tempStanica.razinaSvijetlosti = Double.parseDouble(obj2.getString("field2"));
+            tempStanica.parkirnaMjesta.get(0).stanjeParkirnogMjesta = Integer.parseInt(obj2.getString("field1")) == 1;
         } catch (Exception e) {}
         try {
-            tempStanica.pokretDetektiran = Double.parseDouble(obj2.getString("field3")) == 1;
+            tempStanica.parkirnaMjesta.get(1).stanjeParkirnogMjesta = Integer.parseInt(obj2.getString("field2")) == 1;
         } catch (Exception e) {}
         try {
-            tempStanica.autoVidljiv = Double.parseDouble(obj2.getString("field4")) == 1;
-        } catch (Exception e) {}
-        try {
-            tempStanica.pjesakVidljiv = Double.parseDouble(obj2.getString("field5")) == 1;
-        } catch (Exception e) {}
-        try {
-            tempStanica.TVOC = Double.parseDouble(obj2.getString("field6"));
-        } catch (Exception e) {}
-        try {
-            tempStanica.eCO2 = Double.parseDouble(obj2.getString("field7"));
+            tempStanica.parkirnaMjesta.get(2).stanjeParkirnogMjesta = Integer.parseInt(obj2.getString("field3")) == 1;
         } catch (Exception e) {}
 
 
-        if(idInVector == null) {
+        if(Data.sveStanice.isEmpty()) {
             Data.sveStanice.add(tempStanica);
         }
 
     }
 
+    /*
     public static void doChannel3(JSONObject obj2) throws JSONException {
         Integer tempStanicaID;
         try {
@@ -355,6 +336,7 @@ public class JSONHandler {
         }
 
     }
+    */
 
 
 

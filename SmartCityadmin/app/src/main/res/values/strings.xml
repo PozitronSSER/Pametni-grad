@@ -6,7 +6,7 @@
     <string name="stanice">Stanice</string>
 
     <string name="meteoroloskaStanica">Meteorološka stanica</string>
-    <string name="kvalitetaZraka">Kvaliteta zraka</string>
+    <string name="kvalitetaZraka">TVOC</string>
     <string name="rasvjeta">Rasvjeta</string>
     <string name="kamera">Kamera</string>
     <string name="parking">Parking</string>
@@ -15,9 +15,10 @@
     <string name="temperaturaZraka">Temperatura zraka</string>
     <string name="vlagaZraka">Vlaga zraka</string>
     <string name="brzinaVjetra">Brzina vjetra</string>
-    <string name="smjerVjetra">Smjer vjetra</string>
-    <string name="kolicinaPadalina">Količina padalina</string>
-    <string name="tlakZraka">Tlak zraka</string>
+    <string name="razinaCO2">Razina CO2</string>
+    <string name="razinaCO">Razina CO</string>
+    <string name="opasniPlinoviFalse">Nema opasnih plinova</string>
+    <string name="opasniPlinoviTrue">Opasni plinovi detektirani</string>
 
     <string name="TVOC">TVOC</string>
     <string name="eCO2">eCO2</string>
