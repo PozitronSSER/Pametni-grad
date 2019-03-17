@@ -81,9 +81,11 @@
       parkingGet();
     }
 
+    var ponavljanje=0;
     function parkingGet(){
       var xhttp3 = new XMLHttpRequest();
       var slobodnihMjesta=0;
+
       xhttp3.onreadystatechange = function () {
         if (xhttp3.readyState == 4 && xhttp3.status == 200) {
           var tSpeakResponse3 = JSON.parse(xhttp3.responseText);
@@ -103,22 +105,92 @@
 
           console.log(mjesto1 + mjesto2 + mjesto3);
           document.getElementById("ukupnoslobodno").innerHTML=slobodnihMjesta;
-          if(mjesto1==="1" && mjesto2==="0" && mjesto3==="0")document.getElementById("parkingslika").src="parking23.png";
-          if(mjesto1==="0" && mjesto2==="1" && mjesto3==="0")document.getElementById("parkingslika").src="parking13.png";
-          if(mjesto1==="0" && mjesto2==="0" && mjesto3==="1")document.getElementById("parkingslika").src="parking12.png";
-          if(mjesto1==="1" && mjesto2==="1" && mjesto3==="0")document.getElementById("parkingslika").src="parking3.png";
-          if(mjesto1==="0" && mjesto2==="1" && mjesto3==="1")document.getElementById("parkingslika").src="parking1.png";
-          if(mjesto1==="1" && mjesto2==="0" && mjesto3==="0")document.getElementById("parkingslika").src="parking23.png";
-          if(mjesto1==="1" && mjesto2==="0" && mjesto3==="1")document.getElementById("parkingslika").src="parking2.png";
-          if(mjesto1==="1" && mjesto2==="1" && mjesto3==="1")document.getElementById("parkingslika").src="parking0.png";
           console.log(tSpeakResponse3);
+          crtajParking(mjesto1, mjesto2, mjesto3);
         }
       };
       xhttp3.open("GET", "https://api.thingspeak.com/channels/629316/feeds.json?api_key=YKPQUEH22XA0MPVE&results=1", true);
       xhttp3.send();
       setTimeout(function(){window.onload()},15000);
+
       
     }
+    
+    function crtajParking(mjesto1, mjesto2, mjesto3){
+      var c = document.getElementById("parking");
+          var ctx = c.getContext("2d");
+          var img = document.getElementById("parkingslika");
+        if(ponavljanje!=0){ctx.moveTo(0,0);}
+          ctx.drawImage(img, 65, 0);
+          if(mjesto1=="0")
+          {
+            ctx.beginPath();
+            ctx.arc(220,130,40,0,2*Math.PI);
+            ctx.fillStyle="green";
+            ctx.fill();
+          }
+          else
+          {
+            ctx.beginPath();
+            ctx.arc(220,130,40,0,2*Math.PI);
+            ctx.fillStyle="red";
+            ctx.fill();
+          }
+
+          
+          if(mjesto2=="0")
+          {
+            ctx.beginPath();
+            ctx.moveTo(570,130);
+            ctx.arc(530,130,40,0,2*Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = "green";
+            ctx.fill();
+          }
+          else
+          {
+            ctx.beginPath();
+            ctx.moveTo(570,130);
+            ctx.arc(530,130,40,0,2*Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = "red";
+            ctx.fill();
+          }
+
+          if(mjesto3=="0")
+          {
+            ctx.beginPath();
+            ctx.moveTo(880,130);
+            ctx.arc(840,130,40,0,2*Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = "green";
+            ctx.fill(); 
+          }
+          else
+          {
+            ctx.beginPath();
+            ctx.moveTo(880,130);
+            ctx.arc(840,130,40,0,2*Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = "red";
+            ctx.fill();
+          }
+          console.log("Ponavljanje broj " + ponavljanje);          
+          ponavljanje++;
+        initMap();
+    }
+    
+    function initMap() {
+      if(ponavljanje==0)
+      {
+      console.log("init map");
+      var ets = {lat: 45.3364067, lng: 14.4170263};
+      var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 14, center: ets});
+      var marker = new google.maps.Marker({position: ets, map: map});
+      }
+
+}
   </script>
 
 
@@ -216,8 +288,10 @@
       <div class="col-sm-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title" style="text-align:center;">Parking</h5>
-            <img src="parking123.png" class="img-fluid" alt="Responsive image" id="parkingslika"></br>
+            <h5 class="card-text" style="text-align:center;"><b>Parking</b></h5>
+            <img src="parkingEmpty.png" class="img-fluid" alt="Responsive image" id="parkingslika" width="0" height="0"></br>
+            <canvas id="parking" width="997" height="316" style="width: 93%; height: 100%;">
+              Parking display</canvas> </br>
             <b>Ukupno mjesta slobodno: </b> </br>
             <div class="card-text" id="ukupnoslobodno">...</div>
             </br>
@@ -262,7 +336,24 @@
 
   </div>
   </div>
+  </br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-text" style="text-align:center;"><b>Lokacija</b></h5></br>
+            <div id="map" style="height: 500px; widows: 100%; "></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</br> </br>
 
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt3-ApJ9F5JFz2jcJrxN_-IYEZkURm9NY&callback=initMap">
+  </script>
 </body>
 
 </html>
