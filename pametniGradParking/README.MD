@@ -1,4 +1,4 @@
-# Senzori za perkirna mjesta
+# Senzori za parkirna mjesta
 
 ## Opis
 
