@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><color name="colorPrimary">#2974ff</color>
+    <color name="colorPrimaryDark">#214c9e</color>
+    <color name="colorAccent">#002060</color>
+
+    <color name="backgroundColor">#dbeaff</color>
+
+    <color name="textColor">#002060</color>
+
+    <color name="paymentCustomButtonDarkColor">#214c9e</color>
+    <color name="paymentCustomButtonLightColor">#436ebf</color>
+
+    <color name="navigationBarColor">#214c9e</color>
+
+    <color name="loadingColor">#2974ff</color>
+
+    <color name="warningColor">#AA1111</color>
+
+</resources>

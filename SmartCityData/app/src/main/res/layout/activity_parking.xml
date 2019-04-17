@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ParkingActivity"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/no_internet_connection_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/warningColor"
+            android:textColor="@color/backgroundColor"
+            android:text="@string/no_internet_connection"
+            android:gravity="center"
+            android:padding="2dp"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/parking_spot_1"
+            style="@style/ParkingSpotImageViewStyle"/>
+
+        <ImageView
+            android:id="@+id/parking_spot_2"
+            style="@style/ParkingSpotImageViewStyle"/>
+
+        <ImageView
+            android:id="@+id/parking_spot_3"
+            style="@style/ParkingSpotImageViewStyle"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

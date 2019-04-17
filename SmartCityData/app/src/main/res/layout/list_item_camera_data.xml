@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/car_time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/camera_text_size"
+        android:padding="@dimen/camera_text_view_padding"
+        android:text="@string/time"/>
+
+    <TextView
+        android:id="@+id/car_plate_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/camera_text_size"
+        android:padding="@dimen/camera_text_view_padding"
+        android:layout_below="@id/car_time_text_view"
+        android:text="@string/car_plate"/>
+
+</RelativeLayout>

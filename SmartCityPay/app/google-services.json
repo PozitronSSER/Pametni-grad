@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "528037394376",
+    "firebase_url": "https://smartpay-7dd6a.firebaseio.com",
+    "project_id": "smartpay-7dd6a",
+    "storage_bucket": "smartpay-7dd6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528037394376:android:6ae3b3b608a27a6e",
+        "android_client_info": {
+          "package_name": "com.sser.smartcity.smartcitypay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528037394376-63s2i8dgpdmrailodcqk4cvjh12kbu5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sser.smartcity.smartcitypay",
+            "certificate_hash": "a42bfbdbb4d103759b02c90f2654bd2432b23246"
+          }
+        },
+        {
+          "client_id": "528037394376-llukpp000i0qn1r6biqi3bk57kikkc7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEeNevHE33DJ0aMNC4PfX4UoyVP-FsgSE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528037394376-llukpp000i0qn1r6biqi3bk57kikkc7k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

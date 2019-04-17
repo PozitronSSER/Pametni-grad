@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">SmartCity Data</string>
+
+    <!--For now, only croatian language is supported-->
+
+    <string name="meteorological_station">Meteorološka stanica</string>
+    <string name="street_light">Rasvjeta</string>
+    <string name="camera">Kamera</string>
+    <string name="parking">Parking</string>
+    <string name="parking_ticket">Parking ticket</string>
+
+
+    <string name="air_temperature">Temperatura zraka</string>
+    <string name="air_humidity">Vlaga zraka</string>
+    <string name="air_quality">Kvaliteta zraka</string>
+    <string name="co2_level">Razina CO2</string>
+    <string name="co_level">Razina CO</string>
+    <string name="dangerous_gases_detected">Opasni plinovi detektirani</string>
+    <string name="dangerous_gases_not_detected">Opasni plinovi nisu detektirani</string>
+
+
+    <string name="no_internet_connection">Nema internetske veze</string>
+    <string name="no_data">Nema podataka</string>
+
+    <string name="refresh">Osvježi</string>
+
+
+    <string name="time">Vrijeme</string>
+    <string name="car_plate">Tablica</string>
+
+
+    <string name="only_meteorological_station_name">WordSkills meteorološka stanica</string>
+    <string name="only_parking_name">WordSkills parking</string>
+    <string name="only_camera_name">WordSkills kamera</string>
+
+</resources>

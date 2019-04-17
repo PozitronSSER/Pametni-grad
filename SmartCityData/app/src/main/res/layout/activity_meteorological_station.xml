@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MeteorologicalStationActivity"
+    android:background="@color/backgroundColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/no_internet_connection_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/warningColor"
+            android:textColor="@color/backgroundColor"
+            android:text="@string/no_internet_connection"
+            android:gravity="center"
+            android:padding="2dp"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/air_temperature"
+            style="@style/MeteorologicalStationTextViewStyle"
+            android:text="@string/air_temperature"/>
+
+        <TextView
+            android:id="@+id/air_humidity"
+            style="@style/MeteorologicalStationTextViewStyle"
+            android:text="@string/air_humidity"/>
+
+        <TextView
+            android:id="@+id/air_quality"
+            style="@style/MeteorologicalStationTextViewStyle"
+            android:text="@string/air_quality"/>
+
+        <TextView
+            android:id="@+id/co2_level"
+            style="@style/MeteorologicalStationTextViewStyle"
+            android:text="@string/co2_level"/>
+
+        <TextView
+            android:id="@+id/co_level"
+            style="@style/MeteorologicalStationTextViewStyle"
+            android:text="@string/co_level"/>
+
+        <TextView
+            android:id="@+id/dangerous_gases"
+            style="@style/MeteorologicalStationTextViewStyle"
+            android:text="@string/dangerous_gases_not_detected"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

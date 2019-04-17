@@ -1,0 +1,72 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/colorPrimary</item>
+
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif</item>
+    </style>
+
+
+    <style name="CategoryLinearLayoutStyle">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/main_activity_list_item_padding</item>
+
+        <item name="android:orientation">horizontal</item>
+
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+
+    </style>
+
+    <style name="CategoryTextViewStyle">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:textSize">@dimen/main_activity_text_size</item>
+        <item name="android:textColor">@color/textColor</item>
+
+    </style>
+
+    <style name="MeteorologicalStationTextViewStyle">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:padding">@dimen/meteorological_station_text_view_padding</item>
+
+        <item name="android:textSize">@dimen/meteorological_station_text_size</item>
+        <item name="android:textColor">@color/textColor</item>
+
+    </style>
+
+    <style name="ParkingSpotImageViewStyle">
+
+        <item name="android:layout_width">@dimen/parking_spot_size</item>
+        <item name="android:layout_height">@dimen/parking_spot_size</item>
+
+        <item name="android:layout_gravity">center_horizontal</item>
+
+        <item name="android:paddingTop">@dimen/parking_spot_padding</item>
+        <item name="android:paddingBottom">@dimen/parking_spot_padding</item>
+        <item name="android:paddingRight">@dimen/parking_spot_padding</item>
+        <item name="android:paddingLeft">@dimen/parking_spot_padding_left</item>
+
+        <item name="android:src">@drawable/ic_local_parking</item>
+        <item name="android:background">@drawable/ic_parking_available</item>
+
+
+    </style>
+
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2974ff</color>
+    <color name="colorPrimaryDark">#214c9e</color>
+    <color name="colorAccent">#002060</color>
+
+    <color name="backgroundColor">#dbeaff</color>
+
+    <color name="textColor">#002060</color>
+
+
+    <color name="warningColor">#AA1111</color>
+
+    <color name="parkingAvailable">#007000</color>
+    <color name="parkingNotAvailable">#AA0000</color>
+
+</resources>

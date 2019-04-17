@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="fab_size">74dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_elevation">16dp</dimen>
+
+    <dimen name="text_separation_margin">16dp</dimen>
+
+    <dimen name="balance_layout_padding">50dp</dimen>
+    <dimen name="account_balance_payment_button_margin">16dp</dimen>
+
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    android:background="@color/backgroundColor">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--TODO: add number showing how much data is in every category-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/no_internet_connection_TV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/warningColor"
+                android:textColor="@color/backgroundColor"
+                android:text="@string/no_internet_connection"
+                android:gravity="center"
+                android:padding="2dp"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/meteorological_station"
+                style="@style/CategoryLinearLayoutStyle">
+
+                <TextView
+                    style="@style/CategoryTextViewStyle"
+                    android:text="@string/meteorological_station"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/street_light"
+                style="@style/CategoryLinearLayoutStyle">
+
+                <TextView
+                    style="@style/CategoryTextViewStyle"
+                    android:text="@string/street_light"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/camera"
+                style="@style/CategoryLinearLayoutStyle">
+
+                <TextView
+                    style="@style/CategoryTextViewStyle"
+                    android:text="@string/camera"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/parking"
+                style="@style/CategoryLinearLayoutStyle">
+
+                <TextView
+                    style="@style/CategoryTextViewStyle"
+                    android:text="@string/parking"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/parking_ticket"
+                style="@style/CategoryLinearLayoutStyle">
+
+                <TextView
+                    style="@style/CategoryTextViewStyle"
+                    android:text="@string/parking_ticket"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

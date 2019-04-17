@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".HomeActivity">
+
+
+    <TextView
+        android:id="@+id/no_internet_connection_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/warningColor"
+        android:textColor="@color/backgroundColor"
+        android:text="@string/no_internet_connection"
+        android:gravity="center"
+        android:padding="2dp"
+        android:elevation="4dp"
+        android:visibility="visible"
+        tools:ignore="UnusedAttribute" />
+
+    <ProgressBar
+        android:id="@+id/loading_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/no_internet_connection_TV"
+        android:padding="2dp"
+        android:elevation="4dp"
+        android:indeterminate="true"
+        android:visibility="visible"
+        tools:ignore="UnusedAttribute" />
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/home_activity_parent_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/balance_layout_padding"
+                    android:paddingTop="@dimen/balance_layout_padding">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/user_balance_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center"
+                            android:textSize="64sp"
+                            android:text="0.00 kn"/>
+
+                        <Button
+                            android:id="@+id/add_payment_to_the_account_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/account_balance_payment_button_margin"
+                            android:background="@drawable/payment_custom_button"
+                            android:foreground="?selectableItemBackground"
+                            tools:ignore="UnusedAttribute"
+                            android:text="@string/add_to_the_account"
+                            android:textColor="@color/backgroundColor"/>
+
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+
+
+                <ListView
+                    android:id="@+id/user_plates_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+
+    <ImageView
+        android:id="@+id/add_plate_clickable_image_view"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_add"
+        android:elevation="@dimen/fab_elevation"/>
+
+
+</RelativeLayout>
+
