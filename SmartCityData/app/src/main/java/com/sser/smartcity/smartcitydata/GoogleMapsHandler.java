@@ -13,12 +13,12 @@ public class GoogleMapsHandler {
      */
 
     // Parking coordinates
-    public static final String parkingLat = "45.805110";
-    public static final String parkingLong = "15.952376";
+    public static final String parkingLat = "45.801385";
+    public static final String parkingLong = "15.970475";
 
     // Camera coordinates
-    public static final String cameraLat = "45.779008";
-    public static final String cameraLong = "15.971656";
+    public static final String cameraLat = "45.801048";
+    public static final String cameraLong = "15.970861";
 
     // Meteorological station coordinates
     public static final String meteorologicalLat = "45.335779";

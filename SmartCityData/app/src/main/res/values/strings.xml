@@ -29,8 +29,8 @@
     <string name="car_plate">Tablica</string>
 
 
-    <string name="only_meteorological_station_name">WordSkills meteorološka stanica</string>
-    <string name="only_parking_name">WordSkills parking</string>
-    <string name="only_camera_name">WordSkills kamera</string>
+    <string name="only_meteorological_station_name">SmartCity meteorološka stanica</string>
+    <string name="only_parking_name">SmartCity parking</string>
+    <string name="only_camera_name">SmartCity kamera</string>
 
 </resources>
